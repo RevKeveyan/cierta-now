@@ -1,0 +1,96 @@
+@import "../../variables.scss";
+
+.policy-page-container {
+  background: $background;
+  min-height: 100vh;
+  padding: 3rem 0;
+  padding-top: 60px;
+  .policy-section {
+    background: $light;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba($dark, 0.1);
+
+    .section-header {
+      border-bottom: 2px solid $main-color-light;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+
+      .main-title {
+        color: $main-color;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        color: $dark;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .effective-date {
+        color: $helper;
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+    }
+
+    .content-paragraph {
+      margin-bottom: 1.5rem;
+
+      .highlighted-sentence {
+        color: $main-color;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $dark;
+        line-height: 1.6;
+      }
+    }
+
+    .content-list {
+      padding-left: 1.5rem;
+      color: $dark;
+      margin: 1.5rem 0;
+
+      .list-item {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.error-alert {
+  margin: 2rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .policy-page-container {
+    padding: 1rem;
+
+    .policy-section {
+      padding: 1rem;
+
+      .section-header {
+        .main-title {
+          font-size: 1.5rem;
+        }
+        
+        .subtitle {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

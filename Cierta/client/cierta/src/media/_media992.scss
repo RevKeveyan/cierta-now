@@ -1,0 +1,153 @@
+@import "../variables.scss";
+
+@media (max-width: 992px){
+    .mobile-services {
+        display: blocK !important;
+        }
+    .header{
+        &__container{
+            padding: 0 10px;
+        }
+        position: relative;
+        &__item{
+            font-size: 16px;
+        }
+        &__menu{
+            position: absolute;
+            right: -50%;
+            transform: translateX(-50%);
+            top: 70px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            &.open-burger{
+                display: flex;
+                background-color: $white;
+                height: 100vh;
+                justify-content: flex-start;
+              
+                .main-btn{
+                    width: 300px;
+                }
+            }
+           
+        }
+        &__contact {
+            margin: 0 auto;
+            margin-top: 20px;
+          }
+        &__nav{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 50px 15px;
+        }
+        &__item {
+            position: relative;
+            display: flex;
+            width: 100%;
+          
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 2px; // толщина как у border-bottom
+              width: 100%;
+              background: linear-gradient(to right, $main-color, $main-color-light);
+            }
+          }
+        .hamburger{
+            display: block;
+            position: absolute ;
+            left: 90%;
+            transform: translateY(-50%);
+            width: 30px;
+            // margin-top: 20px;
+            span {  
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, $main-color, $main-color-light, );
+            margin-bottom: 4px;
+            transition: 0.5s all;
+            }
+            &.burger-active{
+                span{
+                    margin-bottom: -2px;
+                    &:nth-child(1){
+                        transform: translateY(3px) rotate(-45deg);
+                    }
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:nth-child(3){
+                        transform: translateY(3px) rotate(45deg);
+                        }
+                    }
+                }
+        }
+       
+    .dropdown {
+            // position: relative;
+        }       
+       .dropdown__submenu {
+        // left: 50%;
+        min-width: 100px;
+       }
+    }
+    .service-section{
+        display: none;
+    }
+  
+    .form{
+        &-selector{
+            &__card{
+                &:first-child{
+                    border-radius:  20px 0px 0 0 !important; 
+
+                  }
+                &:last-child{
+                    border-radius: inherit;
+                } 
+                &:nth-child(2){
+                border-radius:  0 20px 0 0;
+                }
+            }
+        }
+    }
+
+    .service-slider{
+        .service-slide{
+            padding-bottom: 0 !important;
+
+        }
+    }
+    .about-us-block {
+        flex-direction: column !important;
+        align-items: flex-start;
+  
+        .about-us-image,
+        .about-us-text {
+          max-width: 100%;
+          flex: 1 1 100%;
+        }
+  
+        .about-us-text {
+          padding: 24px;
+        }
+      }
+
+    .contact-section{
+        background: none;
+        height: 100%;
+        width: 400px;
+        margin: 0 auto;
+        &__container{
+            display: block;
+        }
+    }
+}

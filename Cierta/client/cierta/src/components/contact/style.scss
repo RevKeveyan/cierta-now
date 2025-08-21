@@ -1,0 +1,155 @@
+@import '../../variables.scss';
+
+.contact-section {
+    height: 710px;
+    padding: 40px 0;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ul{
+      text-decoration: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li{
+        margin: 0;
+        padding: 0;
+      }
+    }
+    &__icon {
+        margin-right: 10px;
+        color: $main-color;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-left: 10px;
+        // span{
+        //   color: $helper;
+        // }
+        &__location{
+            color: $main-color;
+            
+        }
+        &__wrapper{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        &__location {
+          border-radius: 50%;
+          border: 1px solid $main-color;
+          background: $white;
+          .icon{
+            font-size: 30px;
+            padding: 5px;
+        }
+        }
+      }
+      
+  &__container {
+    width: 1320px;
+    height: 500px;
+    display: flex;
+    gap: 40px;
+  }
+  &__heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: $dark;
+    margin-bottom: 30px;
+  }
+  &__info {
+    flex: 1;
+    background: $grey;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    ul{
+      margin: 0 !important;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: $main-color;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: $helper;
+
+      strong {
+        color: $main-color;
+      }
+    }
+
+    &__btn {
+      margin-top: 24px;
+      width: fit-content;
+      padding: 12px 24px;
+      background: $main-color;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: darken($main-color, 10%);
+      }
+    }
+  }
+
+  &__map {
+    border-radius: 12px;
+    overflow: hidden;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+  .contact-section__sub {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: $dark;
+  }
+
+  .contact-section__text {
+    font-size: 18px;
+    line-height: 27px;
+    color: $helper;
+  }
+
+  
+  .contact-section__hours {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    &.active-day {
+      font-weight: 600;
+      color: $main-color !important;
+
+      .day {
+        color: $main-color;
+      }
+  }
+    .closed {
+      color: $red;
+      font-weight: 500;
+    }
+  }
+
+}

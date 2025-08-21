@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.services-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__slider {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__selector {
+    max-width: 1320px;
+    width: 100%;
+    padding: 0 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 28px;
+    color: $dark;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}

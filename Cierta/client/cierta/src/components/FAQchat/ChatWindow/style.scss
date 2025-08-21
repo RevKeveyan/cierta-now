@@ -1,0 +1,138 @@
+@import "../../../variables.scss";
+
+.cierta-chat-window {
+  position: fixed !important;
+  bottom: -200px !important;
+  right: 50px !important;
+  left: auto !important;
+  top: auto !important;
+  width: 350px;
+  max-width: 90%;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 1050;
+
+  .modal-dialog {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba($dark, 0.15);
+  }
+}
+
+.cierta-chat-header {
+  background: linear-gradient(to right, $main-color, $main-color-light );
+  color: $light;
+  padding: 1rem 1.5rem;
+  
+  .modal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+  }
+}
+
+.cierta-chat-body {
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: $background;
+}
+
+.cierta-welcome-message {
+  padding: 1rem 1.5rem;
+  background: rgba($main-color-light, 0.1);
+  border-bottom: 1px solid $grey;
+  
+  p {
+    margin: 0;
+    color: $main-color;
+    font-size: 0.9rem;
+  }
+}
+
+.cierta-questions-list {
+  padding: 1rem 0;
+}
+
+.cierta-question-item {
+  border-bottom: 1px solid $grey;
+}
+
+.cierta-question-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: $light;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $dark;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  
+  &:hover {
+    background: $grey;
+    color: $main-color;
+  }
+  
+  &.active {
+    color: $main-color;
+    font-weight: 500;
+  }
+}
+
+.cierta-chevron {
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.cierta-answer {
+  padding: 0 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: $dark;
+  line-height: 1.5;
+  background: $light;
+  
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.cierta-fallback {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid $grey;
+}
+
+.cierta-email-button {
+  background: $main-color;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  
+  &:hover {
+    background: darken($main-color, 10%);
+  }
+}
+
+// Мобильная адаптация
+@media (max-width: 576px) {
+  .cierta-chat-window {
+    right: 20px !important;
+    left: 20px !important;
+    transform: none !important;
+    width: calc(100% - 40px);
+  }
+}

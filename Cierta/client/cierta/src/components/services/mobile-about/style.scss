@@ -1,0 +1,66 @@
+@import "../../../variables.scss";
+
+.mobile-services {
+    display: none;
+    padding: 16px;
+  
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .accordion {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  
+      &__header {
+        padding: 14px 16px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        &.active {
+            background-color: $grey; // светло-голубой фон
+            color: #007bff;            // синий текст (акцент)
+          }
+      }
+      
+      &__content {
+        padding: 14px 16px;
+        color: $white;
+        background: linear-gradient(to right, $main-color, $main-color-light );
+        .more-btn{
+            width: 100%;
+        }
+  
+        p {
+          margin-bottom: 10px;
+        }
+  
+        img {
+          max-width: 100%;
+          border-radius: 6px;
+          margin-bottom: 10px;
+        }
+  
+        .accordion__btn {
+          display: block;
+          text-align: center;
+          background-color: #2196f3;
+          color: white;
+          padding: 10px;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  

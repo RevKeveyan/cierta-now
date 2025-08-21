@@ -1,0 +1,51 @@
+// ScrollToTop.module.scss
+@import '../../variables.scss';
+
+@keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1000;
+  }
+  
+  .scrollButton {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to right, $main-color, $main-color-light );
+
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    animation: appear 0.3s ease-out;
+  
+    &:hover {
+        background: linear-gradient(to right, $main-color, $main-color-light );
+
+      transform: scale(1.1);
+    }
+  
+    &:active {
+      transform: scale(0.95);
+    }
+  
+    &.visible {
+      display: flex;
+    }
+  }

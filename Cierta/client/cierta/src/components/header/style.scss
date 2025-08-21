@@ -1,0 +1,145 @@
+@import "../../variables.scss";
+
+
+.header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #ffffff5b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11; 
+  &__container {
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: start;
+  }
+  &__menu{
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $main-color;
+    text-decoration: none;
+    &__wrapper{
+        width: 48px;
+        height: 48px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+    position: relative;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 18px;
+    color: $dark;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(to right, $main-color, $main-color-light, );
+  border-radius: 6px;
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+  &__link {
+    color: $white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid $helper;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+  a {
+    color: $white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid $helper;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+.dropdown__nested {
+    position: relative;
+  
+    .dropdown__parent {
+      padding: 10px 20px;
+      color: $white;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  
+    .dropdown__submenu {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 4px; 
+      background: linear-gradient(to right, $main-color, $main-color-light);
+      min-width: 220px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      z-index: 11;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  
+      a {
+        color: $white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        border-bottom: 1px dotted $helper;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,92 @@
+
+@media (max-width: 576px){
+  .form{
+    &-selector{
+        &__card{
+            min-width: 150px !important;
+        }
+    }
+}
+.form-step-two__title{
+  width: 330px;
+}
+    .full-slider {
+        height: 100%;
+      }
+    
+      .slide {
+        height: 50vh;
+        background-position: center top;
+    
+        &__content {
+            width: 100%;
+          //   width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            top: 40%;
+    
+          h2 {
+            font-size: 25px;
+
+            width: 100%;
+
+          }
+          p {
+            font-size: 17px;
+            width: 100%;
+          }
+        }
+      }
+    
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+
+      .central-quote-form{
+        .form-selector__card__wrapper{
+          font-size: 17px;
+        }
+        .form-step-two__row{
+          display: block;
+        }
+        .form-step-two__form{
+          display: block;
+        }
+        .form{
+          &-selector{
+              &__card{
+                min-width: 100px;
+                font-size: 17px;
+                  &:first-child{
+                    border-radius:  20px 0px 0 0;
+
+                  }
+                  &:last-child{
+                      border-radius: inherit;
+                  } 
+                  &:nth-child(2){
+                  border-radius:  0 20px 0 0;
+                  }
+          }   
+          
+        }
+      }
+    }
+    
+    .service-slider{
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 800px !important;
+  }
+  .contact-section{
+    background: none;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    &__container{
+        display: block;
+    }
+}
+}
+

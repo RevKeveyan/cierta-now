@@ -1,0 +1,57 @@
+@import  '../../variables.scss';
+
+.navbar {
+    background: $main-color !important;
+    padding: 0.8rem 0;
+  a{
+    border-radius: 50px;
+  }
+    .navbar-brand {
+      color: $light !important;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+  
+    .nav-link-custom {
+      padding: 0.8rem 1.5rem !important;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+      color: $light !important;
+      font-weight: 500;
+  
+      &:hover {
+        background-color: $main-color-light;
+        border-radius: 4px;
+      }
+  
+      &.text-danger {
+        background: $white;
+        border-radius: 50px;
+        color: $error-red !important;
+        &:hover {
+          background-color: rgba($red, 0.1);
+        }
+      }
+    }
+  
+    .custom-toggler {
+      border-color: $light !important;
+  
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$light}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+      }
+    }
+  
+    @media (max-width: 991px) {
+      .nav-link-custom {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+  
+      .navbar-collapse {
+        background-color: $main-color;
+        padding: 1rem;
+        border-top: 1px solid rgba($light, 0.1);
+      }
+    }
+  }

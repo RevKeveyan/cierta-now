@@ -1,0 +1,232 @@
+@import '../../variables.scss';
+
+.blog-page {
+
+  padding: 100px 40px;
+  background: #fff;
+
+  &__container {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 40px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+
+  }
+  // Pagination Styles
+.pagination-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .page-item {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:hover:not(.disabled):not(.active) {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      }
+
+      .page-link {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        min-width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 8px;
+        color: $main-color;
+        background-color: rgba($main-color, 0.08);
+        transition: all 0.2s ease;
+        position: relative;
+        
+        &:hover {
+          background-color: rgba($main-color, 0.15);
+          color: $main-color;
+        }
+
+        &:focus {
+          box-shadow: none;
+          background-color: rgba($main-color, 0.2);
+        }
+      }
+
+      &.active .page-link {
+        background: linear-gradient(to right, $main-color, $main-color-light );
+
+        color: white !important;
+        box-shadow: 0 4px 12px rgba($main-color, 0.25);
+        font-weight: 600;
+      }
+
+      &.disabled .page-link {
+        background: linear-gradient(to right, $main-color, $main-color-light );
+
+        color: $white !important;
+        cursor: not-allowed;
+      }
+
+    }
+
+    // Mobile styles
+    @media (max-width: 576px) {
+      gap: 0.25rem;
+      
+      .page-link {
+        min-width: 32px !important;
+        height: 32px !important;
+        font-size: 0.875rem !important;
+      }
+    }
+  }
+}
+  // Blog Sidebar Select Styles
+.blog-sidebar {
+  .select-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    .select-label {
+      font-size: 0.9rem;
+      color: $main-color;
+      font-weight: 500;
+      letter-spacing: 0.25px;
+      white-space: nowrap;
+    }
+
+    .custom-select {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      padding: 0.4rem 2rem 0.4rem 0.8rem;
+      border: 1px solid $main-color;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      background-color: $white;
+      color: $main-color;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%235a5a5a' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 12px 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      width: 90px;
+
+      &:hover {
+        border-color: $main-color;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba($main-color, 0.2);
+      }
+
+      &:focus {
+        outline: 0;
+        border-color: $main-color;
+        box-shadow: 0 0 0 3px rgba($main-color, 0.15);
+      }
+
+      option {
+        padding: 0.8rem;
+        background: $white;
+        color: $main-color;
+        
+        &:hover {
+          background-color: rgba($main-color, 0.1) !important;
+        }
+      }
+    }
+  }
+}
+}
+
+.blog-main {
+  flex: 2;
+
+  &__image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    color: $main-color;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  &__date {
+    text-align: center;
+    font-size: 14px;
+    color: $helper;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+    color: $dark;
+  }
+}
+
+.blog-sidebar {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 24px;
+  position: sticky;
+  top: 100px; // отступ от верхней границы окна
+  height: fit-content;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      color: $dark;
+      cursor: pointer;
+
+      .icon {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+      }
+
+      &.active {
+        color: $main-color;
+        font-weight: 500;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

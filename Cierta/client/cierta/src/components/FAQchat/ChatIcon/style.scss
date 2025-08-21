@@ -1,0 +1,37 @@
+@import '../../../variables.scss';
+
+.chatIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(to right, $main-color, $main-color-light );
+
+  color: $white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba($dark, 0.15);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(to right, $main-color);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    // transform: scale(0.95);
+
+  }
+
+  @media (max-width: 768px) {
+    bottom: 1rem;
+    right: 1rem;
+    width: 56px;
+    height: 56px;
+  }
+}

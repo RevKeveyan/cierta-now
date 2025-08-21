@@ -1,0 +1,33 @@
+@import "../../../variables.scss";
+
+.service-menu {
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    background: $grey;
+    padding: 40px 20px;
+  
+    &__item {
+      padding: 10px 0;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s ease;
+      border-bottom: 1px solid $helper;
+      
+      &:last-child{
+        border-bottom: none;
+
+      }
+  
+      &:hover {
+        color: $main-color;
+      }
+  
+      &.active {
+        background-image: linear-gradient(to right, $main-color, $main-color-light );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+  }
+}

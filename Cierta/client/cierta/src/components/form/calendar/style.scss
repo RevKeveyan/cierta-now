@@ -1,0 +1,54 @@
+@import "../../../variables.scss";
+
+
+.date-input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-input-label {
+    font-size: 13px;
+    color: $helper;
+    margin-bottom: 4px;
+  }
+  
+  .date-input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $helper;
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: white;
+    cursor: pointer;
+    &.error{
+    border: 1px solid $error-red;
+
+    }
+    .calendar-icon {
+      font-size: 18px;
+      color: #888;
+    }
+  
+    .date-input-value {
+      font-size: 14px;
+      color: #aaa;
+  
+      &.filled {
+        color: #000;
+      }
+    }
+  }
+  
+  .calendar-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    background: white;
+    margin-top: 8px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  

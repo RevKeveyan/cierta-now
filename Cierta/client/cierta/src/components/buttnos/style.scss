@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.main-btn{
+    width: 155px;
+    height: 47px;
+    border-radius: 30px;
+    background: linear-gradient(to right, $main-color, $main-color-light );
+    color: $light !important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    transition: all 0.3s ease;
+    border: none;
+}
+.more-btn{
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+    background: $light;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.3s ease;
+    border: none;
+    color: $dark;    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}

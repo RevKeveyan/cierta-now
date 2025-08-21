@@ -1,0 +1,147 @@
+@import '../../variables.scss';
+
+.site-footer {
+  width: 100%;
+  background: $white;
+  color: $helper;
+  font-size: 16px;  
+ 
+  a {
+    color: $helper;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .footer-copyright{
+    color: $white;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    height: 335px;
+    width: 100%;
+    padding: 20px;
+    // gap: 40px;
+    .footer-dropdown__toggle{
+      margin: 0 auto; 
+    }
+    
+    .footer-column__link{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      color: #ABABAB;
+      // max-width: 280px;
+      cursor: pointer;
+    }
+    .footer-dropdown {
+      display: flex;
+      flex-direction: column;
+    
+      &__toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        color: $helper;
+        font-size: 16px;
+    
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    
+      &__menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 6px;
+    
+        a {
+          cursor: pointer;
+          font-size: 15px;
+          padding-left: 10px;
+          color: $helper;
+          text-decoration: none;
+    
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    a{
+      margin: 0 auto; 
+    }
+    border-right: 1px solid $helper;
+    &:last-child{
+      border: none;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: $main-color;
+      text-align: center;
+    }
+
+    p, a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $helper;
+      max-width: 280px;
+    }
+
+    .icon {
+      font-size: 16px;
+      color: $main-color;
+      
+    }
+    .icon_location {
+        border-radius: 50%;
+        border: 1px solid $main-color;
+        .icon{
+            font-size: 36px;
+            padding: 5px;
+        }
+      }
+      
+  }
+
+  .footer-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    img {
+      height: 48px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .footer-bottom {
+    height: 56px;
+    background: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    a{
+        font-size: 16px;
+        color: $white; 
+    }
+  }
+}

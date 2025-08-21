@@ -1,0 +1,97 @@
+@import '../../../variables.scss';
+.form-selector--hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  
+}
+.form-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  width: 100%;
+
+  
+    &__card {
+    background: $white;
+    border: 2px solid #e1e1e1;
+    padding: 16px 24px;
+    cursor: pointer;
+    min-width: 245px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    &:last-child{
+      border-radius:  0 20px 0 0;
+    }
+    &:first-child{
+      border-radius: 20px 0 0 0;
+    }
+    input[type="radio"] {
+      transform: scale(1.5);  
+    }
+    input {
+      margin-right: 10px;
+      accent-color: $main-color;
+    }
+
+    &.active {
+      border: 2px solid $main-color;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    &__wrapper{
+      font-size: 20px;
+      min-width: 100px;
+      margin: 0 auto; 
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+
+    .dropdown-icon {
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    .selected-sub {
+      display: block;
+      font-size: 12px;
+      color: $helper;
+      margin-top: 4px;
+    }
+  }
+
+  &__dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: $white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 5;
+
+    .form-selector__dropdown-item {
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      border-bottom: 1px dotted $helper;
+      &:last-child{
+        border: none;
+      }
+      &:hover {
+        background: $grey;
+      }
+    }
+  }
+}

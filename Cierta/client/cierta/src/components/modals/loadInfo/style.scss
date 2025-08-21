@@ -1,0 +1,51 @@
+// style.scss
+@import "../../../variables.scss";
+
+.searchResultsTable {
+  th {
+    background-color: $main-color;
+    color: white;
+  }
+  
+  tr:hover {
+    background-color: rgba($main-color, 0.05);
+  }
+}
+
+.noResultsMessage {
+  font-style: italic;
+  color: $grey;
+}
+
+// Добавьте в существующий файл стилей
+
+.searchResultsTable {
+  th {
+    background-color: $main-color;
+    color: white;
+    vertical-align: middle;
+  }
+  
+  tr:hover {
+    background-color: rgba($main-color, 0.05);
+  }
+  
+  .badge {
+    font-size: 0.85em;
+    padding: 0.5em 0.75em;
+  }
+}
+
+.detail-row {
+  background-color: #f8f9fa;
+  
+  td {
+    padding: 0;
+    border-top: none;
+  }
+}
+
+.noResultsMessage {
+  font-style: italic;
+  color: $grey;
+}
