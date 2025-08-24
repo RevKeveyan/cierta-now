@@ -2,7 +2,7 @@
 const multer = require("multer");
 const sharp = require("sharp");
 const { randomUUID } = require("crypto");
-const { putObject } = require("../utils/s3");
+const { s3Put } = require("../utils/s3");
 
 const upload = multer({ storage: multer.memoryStorage(), limits:{ fileSize: 5*1024*1024 },
   fileFilter: (req, file, cb)=> file.mimetype.startsWith("image/") ? cb(null,true):cb(new Error("Only images"),false)
@@ -17,7 +17,9 @@ async function uploadBlogImageToS3(req, res, next) {
   const filename = `${Date.now()}-${randomUUID()}.${ext}`;
   const Key = `uploads/blogs/${filename}`;
 
-  await putObject({ Key, Body: buf, ContentType: isGif ? "image/gif" : "image/webp" });
+await s3Put({ Key, Body: file.buffer, ContentType: file.mimetype });
+blog.image = Key;
+
 
   // как раньше: в контроллер пойдёт "путь", но это будет S3 key
   req.file.path = Key;

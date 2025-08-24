@@ -13,7 +13,7 @@ const contentRoutes = require("./routes/contentRoutes");
 const loadRoutes = require("./routes/loadRoutes");
 const supportRoutes = require("./routes/supportRoutes");
 const uploadsProxy = require("./routes/s3Routes");
-
+const s3Routes = require("./routes/s3Routes");
 
 const app = express();
 const server = http.createServer(app); // оборачиваем app в сервер
@@ -24,6 +24,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
+app.use("/uploads/blogs", s3Routes);
 app.use('/public', express.static('public'));
 app.use("/uploads/blogs", uploadsProxy);
 
@@ -35,7 +36,22 @@ app.use('/loads', loadRoutes);
 app.use('/policies', policyRoutes);
 app.use('/content', contentRoutes);
 
+const { s3, BUCKET } = require("./utils/s3");
+const { GetObjectCommand } = require("@aws-sdk/client-s3");
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 
+// Middleware для S3: перехватываем /uploads/* и отдаем из облака
+app.get("/uploads/*", async (req, res) => {
+  try {
+    const Key = req.path.substring(1); // убираем первый "/"
+    const command = new GetObjectCommand({ Bucket: BUCKET, Key });
+    const url = await getSignedUrl(s3, command, { expiresIn: 3600 }); // 1 час
+    res.redirect(url); // редиректим на S3
+  } catch (err) {
+    console.error("S3 proxy error:", err);
+    res.status(404).send("File not found");
+  }
+});
 
 mongoose
   .connect(MONGO_URI, {})
